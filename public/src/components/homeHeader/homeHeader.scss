@@ -1,3 +1,23 @@
 .homeHeader {
     grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    &__newRoom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba(126, 107, 107, 0.5);
+        width: 45px;
+        height: 45px;
+
+        &:hover {
+            background: rgba(214, 185, 185, 0.5);
+            cursor: pointer;
+        }
+    }
 }
