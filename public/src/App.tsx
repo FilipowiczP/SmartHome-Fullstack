@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme/theme";
-import { Body } from "./theme/global";
+import { Background } from "./theme/global";
 
 import Home from "./views/Home/Home";
 
@@ -18,10 +18,14 @@ const App = () => {
   };
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Body />
+      <Background />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/"
+            render={() => <Home toggleTheme={toggleTheme} themes={theme} />}
+          />
         </Switch>
       </BrowserRouter>
     </ThemeProvider>

@@ -1,0 +1,20 @@
+.footer {
+    grid-row: 3/4;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    &__toggleTheme {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba(126, 107, 107, 0.5);
+
+        &:hover {
+            background: rgba(214, 185, 185, 0.5);
+            cursor: pointer;
+        }
+    }
+}
