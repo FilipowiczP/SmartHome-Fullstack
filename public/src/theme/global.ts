@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Background = styled.body`
+export const Theme = styled.div`
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   position: absolute;
   top: 0;

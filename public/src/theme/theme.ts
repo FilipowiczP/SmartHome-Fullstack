@@ -3,5 +3,5 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  background: "linear-gradient(rgb(0, 0, 0), rgb(255, 255, 255))",
+  background: "linear-gradient(rgb(0, 0, 102), rgb(51, 51, 255))",
 };

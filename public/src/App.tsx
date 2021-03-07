@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme/theme";
-import { Background } from "./theme/global";
+import { Theme } from "./theme/global";
 
 import Home from "./views/Home/Home";
 
@@ -18,7 +18,7 @@ const App = () => {
   };
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Background />
+      <Theme />
       <BrowserRouter>
         <Switch>
           <Route
