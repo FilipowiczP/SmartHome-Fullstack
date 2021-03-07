@@ -1,5 +1,6 @@
 .homeHeader {
     grid-row: 1/2;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,5 +20,15 @@
             background: rgba(214, 185, 185, 0.5);
             cursor: pointer;
         }
+    }
+
+    &__window {
+        position: absolute;
+        width: 100vw;
+        top: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+
     }
 }

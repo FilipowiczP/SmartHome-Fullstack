@@ -1,12 +1,12 @@
 import React from "react";
 import { FooterProps } from "../../components/Interfaces/Interface";
-import Header from "../../components/homeHeader/homeHeader";
+import HomeHeader from "../../components/homeHeader/HomeHeader";
 import Footer from "../../components/Footer/Footer";
 
 const Home = ({ toggleTheme, themes }: FooterProps) => {
   return (
     <>
-      <Header />
+      <HomeHeader />
       <Footer toggleTheme={toggleTheme} themes={themes} />
     </>
   );
