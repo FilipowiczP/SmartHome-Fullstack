@@ -1,10 +1,8 @@
 export function addRoom(room: any) {
-  return fetch("http://localhost:4000/", {
+  return fetch("http://localhost:4000", {
     method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    mode: "cors",
     body: JSON.stringify(room),
+    headers: { "Content-type": "application/json; charset=UTF-8" },
   });
 }

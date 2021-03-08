@@ -1,10 +1,7 @@
 import { Router, Request, Response } from "express";
-import bodyParser from "body-parser";
 
 const models = require("../models/room");
 export const HomeController: Router = Router();
-
-HomeController.use(bodyParser.json());
 
 HomeController.get("/", (req: Request, res: Response) => {
   models.rooms(function (err: Error, room: any) {

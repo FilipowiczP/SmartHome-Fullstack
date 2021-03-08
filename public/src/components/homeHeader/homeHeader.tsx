@@ -22,7 +22,7 @@ const HomeHeader = () => {
       validation = false;
     }
     if (validation === true) {
-      addRoom(newRoom);
+      addRoom(newRoom).then((res) => res.json());
       setTimeout(() => {
         setNewRoom({ ...newRoom, name: "" });
       }, 1000);
