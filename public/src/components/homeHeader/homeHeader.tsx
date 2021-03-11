@@ -12,7 +12,6 @@ const HomeHeader = () => {
   });
 
   const handleRoomName = (value: any) => {
-    console.log(value);
     setNewRoom({ ...newRoom, name: value });
   };
 
