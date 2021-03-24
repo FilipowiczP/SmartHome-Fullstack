@@ -9,6 +9,13 @@ HomeController.get("/", (req: Request, res: Response) => {
   });
 });
 
+HomeController.patch(`/:id`, (req: Request, res: Response) => {
+  console.log("endpoint id" + req.params.id);
+  console.log("endpoint body" + req.body);
+
+  models.turnOffAllRoom(req.params.id, req.body);
+});
+
 HomeController.post("/", (req: Request, res: Response) => {
   models.add(req.body, function (err: Error, room: Object) {
     if (err) {

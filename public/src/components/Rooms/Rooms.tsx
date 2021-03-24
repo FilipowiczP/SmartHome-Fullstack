@@ -1,16 +1,21 @@
 import React from "react";
 import "./rooms.scss";
+import { MainProps } from "../Interfaces/Interface";
 import ToggleButton from "../ToggleButton/ToggleButton";
 
-const Rooms = () => {
+const Rooms = ({ rooms }: MainProps) => {
   return (
     <main className="main">
-      <div className="main__room">
-        <h2>Room name</h2>
-        <h3>Devices: X</h3>
-        <h3>Room is: Y</h3>
-        <ToggleButton />
-      </div>
+      {rooms.map(({ _id, name, device, turnOffRoom }: any) => {
+        return (
+          <div className="main__room">
+            <h2>{name}</h2>
+            <h3>Devices: {device.length}</h3>
+            <h3>Room is: {turnOffRoom === true ? "On" : "Off"}</h3>
+            <ToggleButton turnOffRoom={turnOffRoom} id={_id} />
+          </div>
+        );
+      })}
     </main>
   );
 };

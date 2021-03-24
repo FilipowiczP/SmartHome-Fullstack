@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { addRoom } from "../API";
+import { HomeHeaderProps } from "../Interfaces/Interface";
 import plus from "../../images/plus.png";
 import "./homeHeader.scss";
 
-const HomeHeader = () => {
+const HomeHeader = ({ alertNewRoom, alertAddNewRoom }: HomeHeaderProps) => {
   const [window, setWindow] = useState(false);
   const [newRoom, setNewRoom] = useState({
     name: "",
@@ -22,6 +23,7 @@ const HomeHeader = () => {
     }
     if (validation === true) {
       addRoom(newRoom).then((res) => res.json());
+      alertNewRoom();
       setTimeout(() => {
         setNewRoom({ ...newRoom, name: "" });
       }, 1000);
@@ -42,6 +44,7 @@ const HomeHeader = () => {
             value={newRoom.name}
             onChange={(event) => handleRoomName(event.target.value as any)}
           />
+          {alertAddNewRoom === "" ? "" : alertAddNewRoom}
           <button
             className="homeHeader__window-button button"
             onClick={handleAddRoom}
