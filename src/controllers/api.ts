@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, response } from "express";
 
 const models = require("../models/room");
 export const HomeController: Router = Router();
@@ -10,10 +10,10 @@ HomeController.get("/", (req: Request, res: Response) => {
 });
 
 HomeController.patch(`/:id`, (req: Request, res: Response) => {
-  console.log("endpoint id" + req.params.id);
-  console.log("endpoint body" + req.body);
+  const id = req.params.id;
+  const data = req.body.turnOffRoom;
 
-  models.turnOffAllRoom(req.params.id, req.body);
+  models.turnOffAllRoom(id, data);
 });
 
 HomeController.post("/", (req: Request, res: Response) => {

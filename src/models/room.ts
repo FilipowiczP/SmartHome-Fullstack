@@ -47,15 +47,21 @@ function addRoom(roomData: Object, cb: Function) {
   });
 }
 
-function turnOffAllRoom(id: string, change: boolean) {
-  console.log("method " + id);
-  console.log("method " + change);
-
-  Room.findByIdAndUpdate({ _id: id }, { $set: { turnOffRoom: true } });
+function turnOffAllRoom(id: string, data: boolean) {
+  Room.findByIdAndUpdate(
+    id,
+    { $set: { turnOffRoom: data } },
+    { new: true },
+    (error) => {
+      if (error) {
+        console.log(error);
+      }
+    }
+  );
 }
 
 module.exports = {
   rooms: listRooms,
   add: addRoom,
-  change: turnOffAllRoom,
+  turnOffAllRoom: turnOffAllRoom,
 };

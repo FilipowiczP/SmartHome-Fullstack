@@ -11,6 +11,7 @@ const App = () => {
   const [theme, setTheme] = useState("light");
   const [rooms, setRooms] = useState([]);
   const [alertAddNewRoom, setAlertAddNewRoom] = useState("");
+  const [turnAllRoom, setTurnAllRoom] = useState(true);
 
   useEffect(() => {
     roomsList()
@@ -24,13 +25,17 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => setRooms(data));
     console.log(rooms);
-  }, [alertAddNewRoom]);
+  }, [alertAddNewRoom, turnAllRoom]);
 
   const alertNewRoom = () => {
     setAlertAddNewRoom("Added a new room");
     setTimeout(() => {
       setAlertAddNewRoom("");
     }, 2000);
+  };
+
+  const toggleRoom = () => {
+    setTurnAllRoom(!turnAllRoom);
   };
 
   const toggleTheme = () => {
@@ -51,6 +56,7 @@ const App = () => {
             path="/"
             render={() => (
               <Home
+                toggleRoom={toggleRoom}
                 toggleTheme={toggleTheme}
                 themes={theme}
                 alertNewRoom={alertNewRoom}

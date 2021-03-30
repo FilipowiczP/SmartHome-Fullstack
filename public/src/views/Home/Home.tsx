@@ -10,6 +10,7 @@ const Home = ({
   alertNewRoom,
   alertAddNewRoom,
   rooms,
+  toggleRoom,
 }: HomeProps) => {
   return (
     <>
@@ -17,7 +18,7 @@ const Home = ({
         alertNewRoom={alertNewRoom}
         alertAddNewRoom={alertAddNewRoom}
       />
-      <Rooms rooms={rooms} />
+      <Rooms rooms={rooms} toggleRoom={toggleRoom} />
       <Footer toggleTheme={toggleTheme} themes={themes} />
     </>
   );
