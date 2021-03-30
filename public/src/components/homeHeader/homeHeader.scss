@@ -1,3 +1,5 @@
+@import '../sass/variable.scss';
+
 .homeHeader {
     grid-row: 1/2;
     position: relative;
@@ -32,6 +34,11 @@
 
         &-name {
             box-shadow: 5px 5px 20px 3px rgba(0, 0, 0, 0.8)
+        }
+
+        &-succes {
+            font-size: 24px;
+            color: $succes-color;
         }
     }
 }

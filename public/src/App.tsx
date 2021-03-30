@@ -24,7 +24,9 @@ const App = () => {
     roomsList()
       .then((res) => res.json())
       .then((data) => setRooms(data));
-    console.log(rooms);
+    return () => {
+      setTurnAllRoom(true);
+    };
   }, [alertAddNewRoom, turnAllRoom]);
 
   const alertNewRoom = () => {

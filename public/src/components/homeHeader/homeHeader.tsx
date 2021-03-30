@@ -44,7 +44,11 @@ const HomeHeader = ({ alertNewRoom, alertAddNewRoom }: HomeHeaderProps) => {
             value={newRoom.name}
             onChange={(event) => handleRoomName(event.target.value as any)}
           />
-          {alertAddNewRoom === "" ? "" : alertAddNewRoom}
+          {alertAddNewRoom === "" ? (
+            ""
+          ) : (
+            <p className="homeHeader__window-succes">{alertAddNewRoom}</p>
+          )}
           <button
             className="homeHeader__window-button button"
             onClick={handleAddRoom}
